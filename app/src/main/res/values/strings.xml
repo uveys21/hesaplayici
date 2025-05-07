@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">Hesaplayıcı</string>
+
+        <string name="button_mc">MC</string>
+        <string name="button_mr">MR</string>
+        <string name="button_m_plus">M+</string>
+        <string name="button_m_minus">M-</string>
+        <string name="button_ms">MS</string>
+        <string name="button_sin">sin</string>
+        <string name="button_cos">cos</string>
+        <string name="button_tan">tan</string>
+        <string name="button_log">log</string>
+        <string name="button_ln">ln</string>
+        <string name="button_open_parenthesis">(</string>
+        <string name="button_close_parenthesis">)</string>
+        <string name="button_power">^</string>
+        <string name="button_sqrt">√</string>
+        <string name="button_factorial">!</string>
+        <string name="button_del">DEL</string>
+        <string name="button_ac">AC</string>
+        <string name="button_percentage">%</string>
+        <string name="button_ans">ANS</string>
+        <string name="button_equals">=</string>
+        <string name="history">Geçmiş</string>
+        <string name="result">Sonuç</string>
+        <string name="delete_history_item">Geçmiş öğesini sil</string>
+        <string name="clear_all_history">Tümünü Sil</string>
+
+    <string name="help_message">Bu uygulama hesaplama işlemleri yapmanıza yardımcı olur. İşlem yapmak için rakamları ve işlem butonlarını kullanabilirsiniz.</string>
+    <string name="exit_message">İşlemi iptal etmek veya uygulamadan çıkmak istediğinize emin misiniz?</string>
+    <string name="title_message">Uygulamadan Çıkmak İstiyor Musunuz?</string>
+
+    <string-array name="number_format_entries">
+        <item>Standart (123,456.78)</item>
+        <item>Bilimsel (1.23E5)</item>
+        <item>Mühendislik (123.45E3)</item>
+    </string-array>
+
+    <string-array name="number_format_values">
+        <item>standard</item>
+        <item>scientific</item>
+        <item>engineering</item>
+    </string-array>
+</resources>
