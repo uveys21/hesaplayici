@@ -2,7 +2,6 @@
 <resources>
     <style name="Theme.Hesaplayici" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Ana renk - koyu mavi/gri (profesyonel görünüm) -->
-        <item name="colorPrimary">#2E3B4E</item>
 
         <!-- Durum çubuğu için daha koyu ton -->
         <item name="colorPrimaryVariant">#1F2937</item>
@@ -29,13 +28,18 @@
         <item name="android:textColorPrimary">@android:color/white</item>
 
         <!-- ActionBar yüksekliği -->
-        <item name="actionBarSize">64dp</item>
+
         <!-- Splash Screen teması -->
         <item name="windowSplashScreenBackground">@color/splash_background</item>
 
         <item name="windowSplashScreenAnimationDuration">200</item>
+        <item name="android:windowBackground">@color/splash_background</item>
 
 
+    </style>
+
+    <style name="SplashTheme" parent="Theme.Hesaplayici.NoActionBar">
+        <item name="android:windowBackground">@color/md_theme_dark_background</item>
 
     </style>
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">

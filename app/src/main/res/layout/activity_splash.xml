@@ -1,7 +1,39 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash_background">
+    android:background="@color/white">
 
-    </RelativeLayout>
+    <ImageView
+        android:id="@+id/device_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/device_icon"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/minus_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/minus_icon"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/multiplay_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/multiplay_icon"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/plus_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/plus_icon"
+        android:visibility="gone" />
+
+</RelativeLayout>
