@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Ana Uygulama Teması (ActionBar ile) -->
+    <style name="Theme.Hesaplayici" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Ana renk - koyu mavi/gri (profesyonel görünüm) -->
+        <item name="colorPrimary">#37474F</item> <!-- Örnek bir ana renk, colorPrimary eklemek iyi bir pratiktir -->
+        <item name="colorPrimaryVariant">#1F2937</item> <!-- Durum çubuğu için daha koyu ton -->
+        <item name="colorOnPrimary">@color/white</item> <!-- Ana renk üzerindeki yazı rengi (beyaz varsayıldı) -->
+
+        <!-- Vurgu rengi - hesap işlemleri için turuncu tonu -->
+        <item name="colorSecondary">#FF5722</item>
+        <item name="colorSecondaryVariant">#E64A19</item> <!-- Vurgu renginin koyu tonu -->
+        <item name="colorOnSecondary">@color/white</item> <!-- Vurgu rengi üzerindeki yazı rengi -->
+
+        <!-- Durum çubuğu rengi -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        <!-- Yazı boyutu - rakamların okunabilirliği için uygun -->
+        <item name="android:textSize">16sp</item>
+
+        <!-- ActionBar üzerindeki metin rengi (eğer parent temadan farklı bir şey isteniyorsa) -->
+        <!-- <item name="android:textColorPrimary">@android:color/white</item> --> <!-- Genellikle parent tema bunu halleder -->
+
+        <!-- Yeni Splash Screen API için gerekli öğeler -->
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item> <!-- Eğer kullanılıyorsa -->
+        <item name="windowSplashScreenAnimationDuration">200</item>
+        <item name="postSplashScreenTheme">@style/Theme.Hesaplayici</item> <!-- Splash sonrası bu temaya döner -->
+
+        <!-- Genel pencere arka planı (Splash sonrası için) -->
+        <item name="android:windowBackground">@color/window_background_color</item> <!-- Uygulamanızın genel arka plan rengi -->
+    </style>
+
+    <!-- Ana Uygulama Temasının ActionBar'sız Versiyonu -->
+    <style name="Theme.Hesaplayici.NoActionBar" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Theme.Hesaplayici'dan miras almak istediğiniz ortak stil öğelerini buraya kopyalayın -->
+        <item name="colorPrimary">#37474F</item>
+        <item name="colorPrimaryVariant">#1F2937</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">#FF5722</item>
+        <item name="colorSecondaryVariant">#E64A19</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:textSize">16sp</item> <!-- Genel yazı boyutu, gerekirse -->
+
+        <!-- Yeni Splash Screen API için gerekli öğeler (NoActionBar temasına da eklenebilir veya doğrudan SplashTheme'e) -->
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item>
+        <item name="windowSplashScreenAnimationDuration">200</item>
+        <item name="postSplashScreenTheme">@style/Theme.Hesaplayici</item> <!-- Ana temaya dönüş -->
+
+        <!-- Genel pencere arka planı -->
+        <item name="android:windowBackground">@color/window_background_color</item>
+    </style>
+
+    <!-- Eğer eski yöntemle bir Splash Activity için tema kullanıyorsanız (Yeni API varken genellikle gereksiz) -->
+    <style name="SplashTheme" parent="Theme.Hesaplayici.NoActionBar">
+        <!-- Bu tema artık Theme.Hesaplayici.NoActionBar'dan miras alıyor -->
+        <item name="android:windowBackground">@color/md_theme_dark_background</item>
+        <!-- Bu tema sadece bir Activity'ye atanıyorsa ve yeni Splash API kullanılmıyorsa anlamlıdır -->
+    </style>
+
+    <!-- Android 12+ Yeni Splash Screen API için Tema (Bu tercih edilen yöntemdir) -->
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <!-- Theme.SplashScreen AndroidX kütüphanesinden gelir -->
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item>
+        <item name="windowSplashScreenAnimationDuration">200</item> <!-- Animasyon süresi ms cinsinden -->
+        <item name="postSplashScreenTheme">@style/Theme.Hesaplayici</item> <!-- Splash bittikten sonra uygulanacak ana tema -->
+    </style>
+
+    <!-- SettingsActivity için özel tema -->
+    <style name="SettingsTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#37474F</item> <!-- Ayarlar için de ana renk tanımlanabilir -->
+        <item name="colorPrimaryVariant">#1F2937</item>
+        <item name="colorAccent">#FF5722</item> <!-- Vurgu rengi -->
+        <item name="android:textColorPrimary">#2E3B4E</item> <!-- Preference title rengi -->
+        <item name="android:textColorSecondary">#757575</item> <!-- Preference summary rengi -->
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+    </style>
+
+    <style name="PreferenceThemeOverlay" parent="PreferenceThemeOverlay.v14.Material">
+        <item name="preferenceCategoryTitleTextColor">@color/category_title_color</item>
+    </style>
+
+</resources>

@@ -1,0 +1,83 @@
+
+[versions]
+kotlin = "2.1.0"
+playAppUpdate = "2.1.0"    # AppUpdate için
+playCore = "1.10.3"        # Core için (AppUpdate ile uyumlu)
+playCoreKtx = "1.8.1"   # KTX desteği
+agp = "8.9.2"  # Önerilen stabil AGP sürümü (Android Studio sürümünüze göre değişebilir)
+cardview = "1.0.0"
+espressoCoreVersion = "3.4.0"
+composeCompiler = "1.5.11" # Kotlin 1.9.23 ile uyumlu Compose Compiler
+
+# AndroidX Kütüphaneleri
+coreKtx = "1.16.0"
+appcompat = "1.7.0" # Veya en son stabil 1.7.x değilse
+activityCompose = "1.9.0"
+lifecycleRuntimeKtx = "2.8.7"
+constraintlayout = "2.2.1"
+gridlayout = "1.1.0"
+preferenceKtx = "1.2.1" # -ktx uzantılısı
+rules = "1.6.1"
+runner = "1.6.2"
+savedstateKtx = "1.2.1" # -ktx uzantılısı
+splashscreen = "1.0.1"
+
+# Compose
+composeBom = "2025.04.01" # En son stabil BOM (Bill of Materials)
+
+# Google Material
+material = "1.12.0"
+
+# Diğer Kütüphaneler
+lottie = "6.6.6"
+
+# Test Kütüphaneleri
+junit = "4.13.2"
+androidxTestJunit = "1.2.1" # androidx.test.ext:junit
+espressoCore = "3.6.1"
+
+[libraries]
+# AndroidX
+google-play-app-update = { group = "com.google.android.play", name = "app-update", version.ref = "playAppUpdate" }
+google-play-app-update-ktx = { group = "com.google.android.play", name = "app-update-ktx", version.ref = "playAppUpdate" }
+
+
+# App Update
+androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version = "1.10.1" }
+androidx-espresso-core-v340 = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCoreVersion" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-gridlayout = { group = "androidx.gridlayout", name = "gridlayout", version.ref = "gridlayout" } # module yerine group/name
+androidx-preference-ktx = { group = "androidx.preference", name = "preference-ktx", version.ref = "preferenceKtx" }
+androidx-rules = { module = "androidx.test:rules", version.ref = "rules" }
+androidx-runner = { module = "androidx.test:runner", version.ref = "runner" }
+androidx-savedstate-ktx = { group = "androidx.savedstate", name = "savedstate-ktx", version.ref = "savedstateKtx" }
+androidx-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen" }
+
+# Compose (BOM ile yönetilir)
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" } # Sadece debugImplementation
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+# Google Material
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+# kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlin" }
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" } # Eğer Compose kullanıyorsanız lottie-compose
+
+# Test Kütüphaneleri
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestJunit" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" } # Sadece debugImplementation
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }     # Sadece androidTestImplementation
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

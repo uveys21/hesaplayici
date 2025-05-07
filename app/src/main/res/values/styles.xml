@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Temel buton stili -->
+    <style name="BaseButton" parent="Widget.AppCompat.Button">
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <!-- Sayı butonları -->
+    <style name="NumberButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/number_button_background</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_margin">4dp</item>
+    </style>
+
+    <style name="OperationButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/operation_button_background</item>
+        <item name="android:textColor">#007AFF</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_margin">4dp</item>
+    </style>
+
+    <!-- Fonksiyon butonları -->
+    <style name="FunctionButton" parent="BaseButton">
+        <item name="android:background">@drawable/function_button_background</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Hafıza butonları -->
+    <style name="MemoryButton" parent="BaseButton">
+        <item name="android:background">@drawable/memory_button_background</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Eşittir butonu -->
+    <style name="EqualsButton" parent="BaseButton">
+        <item name="android:background">@drawable/equals_button_background</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- AC butonu -->
+    <style name="ACButton" parent="BaseButton">
+        <item name="android:background">@drawable/ac_button_background</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <!-- Silme butonu -->
+    <style name="DeleteButton" parent="BaseButton">
+        <item name="android:background">@drawable/delete_button_background</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <!-- Yüzde butonu -->
+    <style name="PercentageButton" parent="BaseButton">
+        <item name="android:background">@drawable/percentage_button_background</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="EmptyCell">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_rowWeight">1</item>
+    </style>
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">#333333</item>
+        <item name="android:textColorPrimary">#333333</item>
+        <item name="android:background">#FFFFFF</item>
+
+    </style>
+
+    <style name="BaseButtonStyle">
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:elevation">2dp</item>
+    </style>
+
+</resources>

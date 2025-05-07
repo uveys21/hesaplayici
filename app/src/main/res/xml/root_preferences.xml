@@ -1,0 +1,50 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="Genel Ayarlar">
+        <Preference
+            app:key="history"
+            app:title="İşlem Geçmişi"
+            app:summary="Önceki hesaplamalarınızı görüntüleyin"
+            app:icon="@drawable/ic_history" />
+
+        <Preference
+            app:key="clear_history"
+            app:title="Geçmişi Temizle"
+            app:summary="Tüm hesaplama geçmişinizi silin"
+            app:icon="@drawable/ic_delete" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Görünüm Ayarları">
+        <SwitchPreferenceCompat
+            app:key="dark_mode"
+            app:title="Koyu Mod"
+            app:summary="Uygulama temasını koyu renkli yap"
+            app:icon="@drawable/ic_dark_mode"
+            app:defaultValue="false" />
+
+        <ListPreference
+            app:key="display_format"
+            app:title="Sayı Gösterim Biçimi"
+            app:summary="Ondalık sayıların nasıl gösterileceğini seçin"
+            app:icon="@drawable/ic_format"
+            app:entries="@array/number_format_entries"
+            app:entryValues="@array/number_format_values"
+            app:defaultValue="standard" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Hakkında">
+        <Preference
+            app:key="version"
+            app:title="Uygulama Sürümü"
+            app:summary="1.0.0"
+            app:icon="@drawable/ic_info" />
+
+        <Preference
+            app:key="feedback"
+            app:title="Geri Bildirim Gönder"
+            app:summary="Öneri ve sorunlarınızı bize iletin"
+            app:icon="@drawable/ic_feedback" />
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

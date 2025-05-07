@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Hesaplayici" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Ana renk - koyu mavi/gri (profesyonel görünüm) -->
+        <item name="colorPrimary">#2E3B4E</item>
+
+        <!-- Durum çubuğu için daha koyu ton -->
+        <item name="colorPrimaryVariant">#1F2937</item>
+
+        <!-- Ana renk üzerindeki yazı rengi -->
+        <item name="colorOnPrimary">@color/Result</item>
+
+        <!-- Vurgu rengi - hesap işlemleri için turuncu tonu -->
+        <item name="colorSecondary">#FF5722</item>
+
+        <!-- Vurgu renginin koyu tonu -->
+        <item name="colorSecondaryVariant">#E64A19</item>
+
+        <!-- Vurgu rengi üzerindeki yazı rengi -->
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Durum çubuğu rengi -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        <!-- Yazı boyutu - rakamların okunabilirliği için uygun -->
+        <item name="android:textSize">16sp</item>
+
+        <!-- ActionBar üzerindeki metin rengi -->
+        <item name="android:textColorPrimary">@android:color/white</item>
+
+        <!-- ActionBar yüksekliği -->
+        <item name="actionBarSize">64dp</item>
+
+        <item name="postSplashScreenTheme">@style/Theme.Hesaplayici</item>
+
+
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimationDuration">200</item>
+    </style>
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item>
+        <item name="windowSplashScreenAnimationDuration">200</item>
+        <item name="postSplashScreenTheme">@style/Theme.Hesaplayici</item>
+    </style>
+
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android 5.0+ (API 21) için tema -->
+    <style name="Theme.Hesaplayici" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Splash screen arkaplanı (renk + ikon) -->
+        <item name="android:windowBackground">@drawable/splash_background</item>
+
+
+        <!-- Diğer tema özellikleri -->
+        <item name="colorPrimary">#2E3B4E</item>
+        <item name="colorPrimaryVariant">#1F2937</item>
+    </style>
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item>
+        <item name="windowSplashScreenAnimationDuration">200</item>
+        <item name="postSplashScreenTheme">@style/Theme.Hesaplayici</item>
+    </style>
+</resources>
