@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.example.hesaplayici.app-mergeDebugResources-68:/layout/activity_main.xml",
+        "source": "com.example.hesaplayici.app-main-71:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-mergeDebugResources-68:/layout/activity_splash.xml",
+        "source": "com.example.hesaplayici.app-main-71:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-mergeDebugResources-68:/layout/settings_activity.xml",
+        "source": "com.example.hesaplayici.app-main-71:/layout/settings_activity.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-mergeDebugResources-68:/layout/history_item.xml",
+        "source": "com.example.hesaplayici.app-main-71:/layout/history_item.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-mergeDebugResources-68:/layout/activity_history.xml",
+        "source": "com.example.hesaplayici.app-main-71:/layout/activity_history.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-mergeDebugResources-68:/layout/toast_custom.xml",
+        "source": "com.example.hesaplayici.app-main-71:/layout/toast_custom.xml"
+    }
+]

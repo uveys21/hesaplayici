@@ -1,0 +1,18 @@
+<!-- res/menu/main_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_help"
+        android:title="Yardım"
+        android:icon="@drawable/ic_help"
+        app:showAsAction="ifRoom"
+        android:contentDescription="Yardım ekranını göster" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="Ayarlar"
+        android:icon="@drawable/ic_settings"
+        app:showAsAction="ifRoom"
+        android:contentDescription="Ayarlar ekranını aç" />
+</menu>

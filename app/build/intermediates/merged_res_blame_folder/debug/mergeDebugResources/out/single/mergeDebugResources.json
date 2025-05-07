@@ -1,0 +1,250 @@
+[
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_plus_icon.png.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/plus_icon.png"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_divide_icon.png.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/divide_icon.png"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_equals_button_background.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/equals_button_background.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/layout_toast_custom.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/layout/toast_custom.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_ic_help.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/ic_help.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-xxhdpi_ic_launcher_background.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-xxhdpi/ic_launcher_background.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_splash_background.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/splash_background.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/anim_fade_out.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/anim/fade_out.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/layout_activity_history.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/layout/activity_history.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_minus_icon.png.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/minus_icon.png"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_ic_format.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/ic_format.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_ic_dark_mode.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/ic_dark_mode.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_ic_dialog_alert.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/ic_dialog_alert.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_percentage_button_background.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/percentage_button_background.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/anim_fade_in.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/anim/fade_in.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-hdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_number_button_background.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/number_button_background.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/layout_history_item.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/layout/history_item.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_toast_background.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/toast_background.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-hdpi_ic_launcher_background.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-hdpi/ic_launcher_background.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_splash_background_gradient.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/splash_background_gradient.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_memory_button_background.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/memory_button_background.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_function_button_background.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/function_button_background.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_ic_info.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/ic_info.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/menu_main_menu.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/menu/main_menu.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_ic_settings.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_ic_delete.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/ic_delete.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/xml_root_preferences.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/xml/root_preferences.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_ic_history.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/ic_history.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_ac_button_background.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/ac_button_background.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_multiplay_icon.png.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/multiplay_icon.png"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-xhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-mdpi_ic_launcher_background.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-mdpi/ic_launcher_background.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_operation_button_background.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/operation_button_background.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-xxxhdpi_ic_launcher_background.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-xxxhdpi/ic_launcher_background.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-mdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_delete_button_background.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/delete_button_background.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/layout_settings_activity.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/layout/settings_activity.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_ic_feedback.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/ic_feedback.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/layout_activity_splash.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/drawable_ic_splash.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/drawable/ic_splash.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/layout_activity_main.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/xml_backup_rules.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-xhdpi_ic_launcher_background.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-xhdpi/ic_launcher_background.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/layout-land_activity_main.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/layout-land/activity_main.xml"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.hesaplayici.app-debug-69:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.hesaplayici.app-main-71:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    }
+]
