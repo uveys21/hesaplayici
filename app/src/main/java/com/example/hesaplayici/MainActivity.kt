@@ -1,5 +1,6 @@
 package com.example.hesaplayici
 
+import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.AdaptiveIconDrawable
@@ -16,6 +17,8 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -23,6 +26,17 @@ import androidx.compose.ui.graphics.Canvas
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModelProvider
 import androidx.preference.PreferenceManager
+import com.google.android.material.snackbar.Snackbar
+import com.google.android.play.core.appupdate.AppUpdateInfo
+import java.text.DecimalFormat
+import java.text.NumberFormat
+import com.google.android.play.core.appupdate.AppUpdateManager
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.install.InstallStateUpdatedListener
+import com.google.android.play.core.install.model.AppUpdateType
+import com.google.android.play.core.install.model.InstallStatus
+import com.google.android.play.core.install.model.UpdateAvailability
+import com.google.android.play.core.tasks.Task
 import com.example.hesaplayici.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -30,18 +44,25 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.*
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val viewModel: CalculatorViewModel by viewModels()
     private lateinit var textViewResult: TextView
     private lateinit var textViewHistory: TextView
+    private var currentNumberFormat: String = ""
 
     private var currentExpression = StringBuilder()
     private var lastAnswer = 0.0
     private var memory = 0.0
     private var loadingCompleted = false // Yeni değişken
+    private lateinit var appUpdateManager: AppUpdateManager
+    private lateinit var updateActivityResultLauncher: ActivityResultLauncher<Intent>
+    private val MY_REQUEST_CODE = 100
+    private lateinit var installStateUpdatedListener: InstallStateUpdatedListener
 
+    private var isUpdateInProgress = false
 
         override fun onCreate(savedInstanceState: Bundle?) {
             val splashScreen = installSplashScreen()
@@ -62,13 +83,67 @@ class MainActivity : AppCompatActivity() {
             binding = ActivityMainBinding.inflate(layoutInflater)
             setContentView(binding.root)
 
+            viewModel.currentNumberFormat.observe(this) { format ->
+                currentNumberFormat = format
+                if (currentExpression.isNotEmpty() && currentExpression.toString().toDoubleOrNull() != null){
+                    updateResult()
+                }
+            }
+
 
 
             initializeViews(savedInstanceState)
             setupViewModelObservers()
             restoreInstanceState(savedInstanceState)
             configureActionBar()
+            // In-app Update
+            appUpdateManager = AppUpdateManagerFactory.create(this)
+            updateActivityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode != Activity.RESULT_OK) {
+                    Log.e("MY_APP", "Update flow failed! Result code: " + result.resultCode)
+                    // If the update is cancelled or fails, you can request to start the update again.
+                    checkUpdateAvailability()
+                }
+            }
 
+            installStateUpdatedListener = InstallStateUpdatedListener { state ->
+                if (state.installStatus() == InstallStatus.DOWNLOADED) {
+                    popupSnackbarForCompleteUpdate()
+                } else if (state.installStatus() == InstallStatus.INSTALLED) {
+                    appUpdateManager.unregisterListener(installStateUpdatedListener)
+                } else {
+                    Log.d("MY_APP", "InstallStateUpdatedListener: state: ${state.installStatus()}")
+                }
+            }
+
+            appUpdateManager.registerListener(installStateUpdatedListener)
+
+            checkUpdateAvailability()
+
+
+            // In-App update check.
+            val appUpdateInfoTask: Task<AppUpdateInfo> = appUpdateManager.appUpdateInfo
+
+            appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
+                if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && appUpdateInfo.isUpdateTypeAllowed(
+                        AppUpdateType.IMMEDIATE
+                    )
+                ) {
+                    appUpdateManager.startUpdateFlowForResult(
+                        appUpdateInfo,
+                        AppUpdateType.IMMEDIATE,
+                        this,
+                        MY_REQUEST_CODE
+                    )
+                } else if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
+                    appUpdateManager.startUpdateFlowForResult(
+                        appUpdateInfo,
+                        AppUpdateType.IMMEDIATE,
+                        this,
+                        MY_REQUEST_CODE
+                    )
+                }
+            }
             CoroutineScope(Dispatchers.IO).launch {
                 try {
                     delay(100)
@@ -81,7 +156,85 @@ class MainActivity : AppCompatActivity() {
                     isLoading = false
                 }
             }
+
         }
+    override fun onResume() {
+        super.onResume()
+        appUpdateManager
+            .appUpdateInfo
+            .addOnSuccessListener { appUpdateInfo ->
+                // If the update is downloaded but not installed,
+                // notify the user to complete the update.
+                if (appUpdateInfo.installStatus() == InstallStatus.DOWNLOADED) {
+                    popupSnackbarForCompleteUpdate()
+                }
+
+                //Check if Immediate update is in progress
+                if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
+                    appUpdateManager.startUpdateFlowForResult(
+                        appUpdateInfo,
+                        AppUpdateType.IMMEDIATE,
+                        this,
+                        MY_REQUEST_CODE
+                    )
+                }
+            }
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        appUpdateManager.unregisterListener(installStateUpdatedListener)
+    }
+
+
+    private fun popupSnackbarForCompleteUpdate() {
+        Snackbar.make(
+            findViewById(R.id.main_layout),
+            "An update has just been downloaded.",
+            Snackbar.LENGTH_INDEFINITE
+        ).apply {
+            setAction("Restart") { appUpdateManager.completeUpdate()
+
+            }
+            setActionTextColor(resources.getColor(R.color.accent))
+            show()
+        }
+    }
+
+
+    private fun checkUpdateAvailability() {
+        val appUpdateInfoTask = appUpdateManager.appUpdateInfo
+
+        appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE) {
+                Snackbar.make(
+                    findViewById(R.id.main_layout),
+                    "Yeni güncelleme mevcut",
+                    Snackbar.LENGTH_INDEFINITE
+                ).apply {
+                    setAction("Yükle") {
+                        isUpdateInProgress = true
+                        if (appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                            appUpdateManager.startUpdateFlowForResult(
+                                appUpdateInfo,
+                                AppUpdateType.IMMEDIATE,
+                                this@MainActivity,
+                                MY_REQUEST_CODE
+                            )
+                        } else if (appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)) {
+                            appUpdateManager.startUpdateFlowForResult(
+                                appUpdateInfo,
+                                AppUpdateType.FLEXIBLE,
+                                this@MainActivity,
+                                MY_REQUEST_CODE
+                            )
+                        }
+                    }
+                    setActionTextColor(resources.getColor(R.color.accent))
+                    show()
+                }
+            }
+        }.addOnFailureListener { e -> showToast("Hata: ${e.message}") }
+    }
 
     private fun initializeViews(savedInstanceState: Bundle?) { // Parametre ekle
         textViewResult = binding.textViewResult
@@ -100,7 +253,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupViewModelObservers() {
         viewModel.currentInput.observe(this) { input ->
-            if (input.isNotEmpty()) textViewResult.text = input
+            if (input.isNotEmpty()) textViewResult.text = formatNumber(input)
         }
 
         viewModel.history.observe(this) { history ->
@@ -216,12 +369,13 @@ class MainActivity : AppCompatActivity() {
             }
 
             val expression = currentExpression.toString() // Hesaplama ifadesini al
-            val result = evaluateExpression(expression) // Hesaplamayı yap
+            var result = evaluateExpression(expression) // Hesaplamayı yap
+            var resultText = formatNumber(result.toString())
 
-            // Tam sayı kontrolü
-            val resultText = if (result == result.toLong().toDouble()) {
-                result.toLong().toString()
-            } else {
+           if (currentNumberFormat != "standard"){
+               resultText=result.toString()
+           }else {
+                // Tam sayı kontrolü
                 result.toString()
             }
 
@@ -472,10 +626,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateResult() {
-        textViewResult.text = currentExpression.toString()
+        textViewResult.text = formatNumber(currentExpression.toString())
     }
 
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
+fun MainActivity.formatNumber(numberString: String): String {
+    return try {
+        val number = numberString.toDouble()
+        val format = when (currentNumberFormat) {
+            "scientific" -> DecimalFormat("0.######E0")
+            "engineering" -> DecimalFormat("0.###E0")
+            else -> NumberFormat.getNumberInstance()
+        }
+        format.format(number)
+    } catch (e: NumberFormatException) {
+        numberString
+    }
+}
+
+
+
+
+

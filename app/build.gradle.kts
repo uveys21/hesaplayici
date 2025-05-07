@@ -69,6 +69,7 @@ dependencies {
     implementation(libs.material)
 
     implementation(libs.lottie)
+    implementation("com.google.android.play:app-update-ktx:2.1.0")
 
     implementation(libs.androidx.runtime.saved.instance.state)
     implementation (libs.androidx.core.splashscreen.v100)
